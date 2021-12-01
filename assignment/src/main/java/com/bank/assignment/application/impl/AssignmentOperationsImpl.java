@@ -17,19 +17,19 @@ public class AssignmentOperationsImpl implements AssignmentOperations {
 
     //Listado
     @Override
-    public Flux<Assignment> queryAll() {
-        return repository.getAll();
+    public Flux<Assignment> findAll() {
+        return repository.findAll();
     }
 
     //Listado por ID
     @Override
-    public Mono<Assignment> findId(String id) {
-        return repository.getId(id);
+    public Mono<Assignment> findById(String id) {
+        return repository.findById(id);
     }
 
     //Agregar
     @Override
-    public Mono<Assignment> create(Assignment assignment) {
+    public Mono<Assignment> save(Assignment assignment) {
         return repository.save(assignment);
     }
 
