@@ -20,19 +20,19 @@ public class AssignmentController {
     //Anotación para obtener todos los registros.
     @GetMapping
     public Flux<Assignment> get() {
-        return assignmentOperations.queryAll();
+        return assignmentOperations.findAll();
     }
 
     //Anotación para obtener registro por Código.
     @GetMapping("/{id}")
     public Mono<Assignment> getId(@PathVariable String id) {
-        return assignmentOperations.findId(id);
+        return assignmentOperations.findById(id);
     }
 
     //Anotación para agregar registros.
     @PostMapping("/add")
     public Mono<Assignment> post(@RequestBody Assignment assignment){
-        return assignmentOperations.create(assignment);
+        return assignmentOperations.save(assignment);
     }
 
     //Anotación para editar los registros.
